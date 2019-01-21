@@ -1,14 +1,22 @@
 # ScriptableKakaoBot
+> 카카오톡 자동응답 봇 시스템
+
 ### 쓰는법?
 0) 카톡 알림 키세요<br>
 1) kbot 디렉토리를 /sdcard-directory/ 에 생성합니다.<br>
 2) response.js를 /sdcard-directory/kbot/ 에 생성합니다.<br>
 3) response 함수를 정의합니다.<br>
 ```js
-function response(room, msg, sender) {
+function response(room, msg, sender, isGroupChat, replier) {
+
+  // 카톡 알림이 오면 호출
+
   /* room - 방 이름
      msg - 메세지 내용
-     sender - 발신자 이름 */
+     sender - 발신자 이름
+     isGroupChat - 단체채팅 여부
+     replier - 세션 캐싱 답장 메소드 객체
+     replier.reply("") - 현재 세션에 답장 */
 }
 ```
 이 함수는 카톡 알림이 오면 호출됩니다.<br>
